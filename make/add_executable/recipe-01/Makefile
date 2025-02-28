@@ -1,19 +1,20 @@
 CXX = g++
 CXXFLAGS = -Wall -std=c++11
-TARGET = hello_world
+PROGRAM = hello_world
 
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(TARGET)
+.PHONY: all 
+all: $(PROGRAM)
 
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+$(PROGRAM): $(OBJS)
+	$(CXX) -o $(PROGRAM) $(OBJS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+.PHONY: clean
 clean:
-	rm -f $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(PROGRAM)
 
-.PHONY: all clean
