@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -std=c++11
 PROGRAM = hello_world
 
 SRCS = main.cpp
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 
 .PHONY: all 
 all: $(PROGRAM)

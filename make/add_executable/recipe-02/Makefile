@@ -7,7 +7,7 @@ LDLIBS = -lgflags -lpthread
 PROGRAM = gflags_demo
 
 SRCS = main.cpp
-OBJS = $(SRCS:.cpp=.o)
+OBJS = $(patsubst %.cpp,%.o,$(SRCS))
 
 .PHONY: all 
 all: $(PROGRAM)
