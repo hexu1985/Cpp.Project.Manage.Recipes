@@ -6,19 +6,19 @@ LDFLAGS = -Wl,-rpath,$(GFLAGS_DIR)/lib -Wl,--enable-new-dtags -L$(GFLAGS_DIR)/li
 LDLIBS = -lgflags -lpthread
 PROGRAM = gflags_demo
 
-SRCS = main.cpp
-OBJS = $(patsubst %.cpp,%.o,$(SRCS))
+SOURCES = main.cpp
+OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
 .PHONY: all 
 all: $(PROGRAM)
 
-$(PROGRAM): $(OBJS)
-	$(CXX) $(LDFLAGS) -o $(PROGRAM) $(OBJS) $(LDLIBS)
+$(PROGRAM): $(OBJECTS)
+	$(CXX) $(LDFLAGS) -o $(PROGRAM) $(OBJECTS) $(LDLIBS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	rm -f $(OBJS) $(PROGRAM)
+	rm -f $(OBJECTS) $(PROGRAM)
 
