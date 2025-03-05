@@ -20,3 +20,4 @@
 - [多个源文件生成多个程序，增加src子目录，指定VPATH](multiple_targets/recipe-04)
 - [多个源文件生成多个程序，增加src和examples子目录](multiple_targets/recipe-05)
 - [多个源文件生成多个程序，增加src和examples子目录，指定VPATH](multiple_targets/recipe-06)
+- [多个源文件生成多个程序，增加src和examples子目录，指定输出目录](multiple_targets/recipe-07)
