@@ -1,9 +1,5 @@
-FMTLIB_DIR = $(HOME)/local/fmtlib
-
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -I$(FMTLIB_DIR)/include
-LDFLAGS = -Wl,-rpath,$(FMTLIB_DIR)/lib -Wl,--enable-new-dtags -L$(FMTLIB_DIR)/lib
-LDLIBS = -lfmt
+CXXFLAGS = -Wall -std=c++11
 
 SOURCES = $(shell ls *.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
@@ -13,7 +9,7 @@ PROGRAMS = $(patsubst %.cpp,%,$(SOURCES))
 all: $(PROGRAMS)
 
 $(PROGRAMS): %: %.o
-	$(CXX) $(LDFLAGS) -o $@ $^ $(LDLIBS)
+	$(CXX) -o $@ $^
 
 $(OBJECTS): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
