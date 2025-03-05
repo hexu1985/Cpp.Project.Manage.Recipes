@@ -3,7 +3,7 @@ CXXFLAGS = -Wall -std=c++11 -I.
 VPATH = framework:idcard
 PROGRAM = FactoryMethod
 
-SOURCES = $(shell find . -mindepth 2 -name "*.cpp"  -printf '%f\n')
+SOURCES = $(shell find . -mindepth 2 -name "*.cpp" -printf '%f\n')
 HEADERS = $(shell ls */*.hpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
