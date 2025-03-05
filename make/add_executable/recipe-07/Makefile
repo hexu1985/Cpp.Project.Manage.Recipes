@@ -13,7 +13,7 @@ PROGRAMS = $(patsubst %.cpp,%,$(SOURCES))
 all: $(PROGRAMS)
 
 $(PROGRAMS): %: %.o
-	$(CXX) $(LDFLAGS) -o $@ $< $(LDLIBS)
+	$(CXX) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
 $(OBJECTS): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

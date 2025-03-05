@@ -9,7 +9,7 @@ PROGRAMS = $(patsubst %.cpp,%,$(SOURCES))
 all: $(PROGRAMS)
 
 $(PROGRAMS): %: %.o
-	$(CXX) -o $@ $<
+	$(CXX) -o $@ $^
 
 $(OBJECTS): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
