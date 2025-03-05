@@ -6,7 +6,6 @@ LDFLAGS = -Wl,-rpath,$(FMTLIB_DIR)/lib -Wl,--enable-new-dtags -L$(FMTLIB_DIR)/li
 LDLIBS = -lfmt
 
 SOURCES = $(shell ls *.cpp)
-OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 PROGRAMS = $(patsubst %.cpp,%,$(SOURCES))
 
 .PHONY: all 
@@ -15,10 +14,10 @@ all: $(PROGRAMS)
 $(PROGRAMS): %: %.o
 	$(CXX) $(LDFLAGS) -o $@ $^ $(LDLIBS)
 
-$(OBJECTS): %.o: %.cpp
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	rm -f $(OBJECTS) $(PROGRAMS)
+	rm -f *.o $(PROGRAMS)
 
