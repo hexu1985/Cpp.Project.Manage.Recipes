@@ -10,6 +10,7 @@
 - [多个源文件生成单个程序，依赖外部库(gtest) find模块](add_executable/recipe-06)
 - [多个源文件生成单个程序，包含子目录](add_executable/recipe-07)
 - [多个源文件生成多个程序，1对1](add_executable/recipe-08)
+- [多个源文件生成多个程序，1对1, 依赖外部库(fmtlib)](add_executable/recipe-09)
 
 
 
