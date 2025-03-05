@@ -7,7 +7,7 @@ SOURCES = $(shell ls src/*.cpp)
 HEADERS = $(shell ls src/*.hpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 
-PROGRAMS_SOURCES = $(shell ls *.cpp)
+PROGRAMS_SOURCES = $(shell ls examples/*.cpp)
 PROGRAMS_OBJECTS = $(patsubst %.cpp,%.o,$(PROGRAMS_SOURCES))
 PROGRAMS = $(patsubst %.cpp,%,$(PROGRAMS_SOURCES))
 
