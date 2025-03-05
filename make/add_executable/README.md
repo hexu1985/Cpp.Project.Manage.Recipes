@@ -1,15 +1,21 @@
 ## 创建可执行程序
 
-- [hello_world程序](recipe-01)
-- [依赖外部库(gflags)](recipe-02)
-- [多个源文件生成单个程序](recipe-03)
-- [多个源文件生成单个程序，依赖外部库(gtest)](recipe-04)
-- [多个源文件生成单个程序，包含子目录](recipe-05)
-- [多个源文件生成单个程序，包含子目录，指定VPATH](recipe-06)
-- [多个源文件生成多个程序，1对1](recipe-07)
-- [多个源文件生成多个程序，1对1, 依赖外部库(fmtlib)](recipe-08)
-- [多个源文件生成多个程序，增加src子目录](recipe-09)
-- [多个源文件生成多个程序，增加src和examples子目录](recipe-10)
+
+### 单个源文件编译单个可执行程序
+- [hello_world程序](hello_world/recipe-01)
+- [依赖外部库(gflags)](hello_world/recipe-02)
 
 
+### 多个源文件编译单个可执行程序
+- [多个源文件生成单个程序](single_target/recipe-01)
+- [多个源文件生成单个程序，依赖外部库(gtest)](single_target/recipe-02)
+- [多个源文件生成单个程序，包含子目录](single_target/recipe-03)
+- [多个源文件生成单个程序，包含子目录，指定VPATH](single_target/recipe-04)
 
+
+### 多个源文件编译多个可执行程序
+- [多个源文件生成多个程序，1对1](multiple_targets/recipe-01)
+- [多个源文件生成多个程序，1对1, 依赖外部库(fmtlib)](multiple_targets/recipe-02)
+- [多个源文件生成多个程序，增加src子目录](multiple_targets/recipe-03)
+- [多个源文件生成多个程序，增加src子目录，指定VPATH](multiple_targets/recipe-04)
+- [多个源文件生成多个程序，增加src和examples子目录](multiple_targets/recipe-05)

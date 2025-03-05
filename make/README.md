@@ -2,16 +2,4 @@
 
 ### [创建可执行程序](add_executable)
 
-- [hello_world程序](add_executable/recipe-01)
-- [依赖外部库(gflags)](add_executable/recipe-02)
-- [多个源文件生成单个程序](add_executable/recipe-03)
-- [多个源文件生成单个程序，依赖外部库(gtest)](add_executable/recipe-04)
-- [多个源文件生成单个程序，包含子目录](add_executable/recipe-05)
-- [多个源文件生成单个程序，包含子目录，指定VPATH](add_executable/recipe-06)
-- [多个源文件生成多个程序，1对1](add_executable/recipe-07)
-- [多个源文件生成多个程序，1对1, 依赖外部库(fmtlib)](add_executable/recipe-08)
-- [多个源文件生成多个程序，增加src子目录](add_executable/recipe-09)
-- [多个源文件生成多个程序，增加src和examples子目录](add_executable/recipe-10)
-
-
 
