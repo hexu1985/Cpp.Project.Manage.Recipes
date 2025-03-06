@@ -4,3 +4,4 @@
 - [创建可执行程序](make/add_executable)
 
 ## [使用cmake脚本](cmake)
+- [创建可执行程序](cmake/add_executable)
