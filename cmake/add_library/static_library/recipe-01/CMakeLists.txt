@@ -1,10 +1,14 @@
-# set minimum cmake version
-cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
+cmake_minimum_required( VERSION 3.15 )
 
-# project name and language
 project(hello-world LANGUAGES CXX)
 
-# generate a library from sources
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+message( STATUS "CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}" )
+message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
+
 add_library(message 
     STATIC 
     Message.hpp 
@@ -12,5 +16,4 @@ add_library(message
     )
 
 add_executable(hello-world hello-world.cpp)
-
 target_link_libraries(hello-world message)
