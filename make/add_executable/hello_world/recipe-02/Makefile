@@ -1,4 +1,4 @@
-GFLAGS_DIR=$(HOME)/local/gflags
+GFLAGS_DIR = $(HOME)/local/gflags
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++11 -I$(GFLAGS_DIR)/include

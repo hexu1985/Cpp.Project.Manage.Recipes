@@ -1,4 +1,4 @@
-GTEST_DIR=$(HOME)/local/googletest
+GTEST_DIR = $(HOME)/local/googletest
 
 CXX = g++
 CXXFLAGS = -Wall -std=c++17 -I$(GTEST_DIR)/include
