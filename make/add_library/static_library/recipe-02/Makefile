@@ -1,13 +1,14 @@
 CXX = g++
-CXXFLAGS = -g3 -Wall -Wextra
+CXXFLAGS = -g3 -Wall -Wextra -Ilib
 AR = ar
 ARFLAGS = rcs
 
 PROG_OBJS = hello-world.o 
 PROGRAM = hello-world
 
-LIB_HDRS = Message.hpp
-LIB_OBJS = Message.o
+LIB_HDRS = $(shell ls lib/*.hpp)
+LIB_SRCS = $(shell ls lib/*.cpp)
+LIB_OBJS = $(patsubst %.cpp,%.o,$(LIB_SRCS))
 LIBRARY = libmessage.a
 
 .PHONY: all
