@@ -1,7 +1,5 @@
 CXX = g++
 CXXFLAGS = -g3 -Wall -Wextra -Ilib
-AR = ar
-ARFLAGS = rcs
 
 PROG_OBJS = hello-world.o 
 PROGRAM = hello-world
