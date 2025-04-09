@@ -1,7 +1,5 @@
 CXX = g++
 CXXFLAGS = -g3 -Wall -Wextra -I.
-AR = ar
-ARFLAGS = rcs
 
 PROG_OBJS = main.o 
 PROGRAM = FactoryMethod 
