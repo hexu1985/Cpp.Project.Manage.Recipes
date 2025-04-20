@@ -15,7 +15,7 @@ all: $(PROGRAM)
 $(PROGRAM): $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o $(PROGRAM) $(OBJECTS) $(LDLIBS)
 
-%.o: %.cpp
+$(OBJECTS): %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
