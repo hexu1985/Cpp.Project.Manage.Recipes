@@ -12,5 +12,4 @@ message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
 add_subdirectory(lib)
 
 add_executable(hello-world hello-world.cpp)
-target_include_directories(hello-world PRIVATE lib)
 target_link_libraries(hello-world message)

@@ -14,3 +14,4 @@ add_library(message
     Message.hpp 
     Message.cpp
     )
+target_include_directories(message PUBLIC .)

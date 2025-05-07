@@ -17,3 +17,4 @@ add_library(message
     ${SOURCES}
     ${HEADERS}
     )
+target_include_directories(message PUBLIC .)

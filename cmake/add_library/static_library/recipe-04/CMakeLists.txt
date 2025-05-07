@@ -9,10 +9,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 message( STATUS "CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}" )
 message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
 
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 add_subdirectory(framework)
 add_subdirectory(idcard)
 
 add_executable( FactoryMethod main.cpp )
-target_include_directories( FactoryMethod PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} )
 target_link_libraries( FactoryMethod idcard framework )
 
