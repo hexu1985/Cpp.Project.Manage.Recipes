@@ -12,6 +12,7 @@
 - [多个源文件生成单个程序](single_target/recipe-01)
 - [多个源文件生成单个程序，依赖外部库(gtest)](single_target/recipe-02)
 - [多个源文件生成单个程序，包含子目录](single_target/recipe-03)
+- [多个源文件生成单个程序，包含子目录(add_subdirectories)](single_target/recipe-04)
 
 
 ### 多个源文件编译多个可执行程序
