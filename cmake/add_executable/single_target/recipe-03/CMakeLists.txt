@@ -10,9 +10,11 @@ message( STATUS "CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}" )
 message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
 
 file(GLOB SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp 
+                  ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp
                   ${CMAKE_CURRENT_SOURCE_DIR}/framework/*.cpp 
-                  ${CMAKE_CURRENT_SOURCE_DIR}/idcard/*.cpp)
-file(GLOB_RECURSE HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
-add_executable( FactoryMethod ${SOURCES} ${HEADERS} )
+                  ${CMAKE_CURRENT_SOURCE_DIR}/framework/*.hpp 
+                  ${CMAKE_CURRENT_SOURCE_DIR}/idcard/*.cpp
+                  ${CMAKE_CURRENT_SOURCE_DIR}/idcard/*.hpp)
+add_executable( FactoryMethod ${SOURCES} )
 target_include_directories( FactoryMethod PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} )
 
