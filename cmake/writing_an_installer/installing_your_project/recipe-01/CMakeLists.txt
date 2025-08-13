@@ -1,44 +1,36 @@
-# CMake 3.6 needed for IMPORTED_TARGET option
-# to pkg_search_module
-cmake_minimum_required(VERSION 3.6 FATAL_ERROR)
+cmake_minimum_required( VERSION 3.15 )
 
-project(recipe-01
-  LANGUAGES CXX
-  VERSION 1.0.0
-  )
+project(hello-world LANGUAGES CXX)
 
-# <<< General set up >>>
-
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-message(STATUS "Project will be installed to ${CMAKE_INSTALL_PREFIX}")
+message( STATUS "CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}" )
+message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
 
-if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
-endif()
+add_library(message 
+    SHARED 
+    Message.hpp 
+    Message.cpp
+    )
 
-message(STATUS "Build type set to ${CMAKE_BUILD_TYPE}")
+add_executable(hello-world hello-world.cpp)
+target_link_libraries(hello-world message)
 
 include(GNUInstallDirs)
 
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
+install(FILES
+            Message.hpp
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/message
+)
 
-# Offer the user the choice of overriding the installation directories
-set(INSTALL_LIBDIR ${CMAKE_INSTALL_LIBDIR} CACHE PATH "Installation directory for libraries")
-set(INSTALL_BINDIR ${CMAKE_INSTALL_BINDIR} CACHE PATH "Installation directory for executables")
-set(INSTALL_INCLUDEDIR ${CMAKE_INSTALL_INCLUDEDIR} CACHE PATH "Installation directory for header files")
-set(DEF_INSTALL_CMAKEDIR share/cmake/${PROJECT_NAME})
-set(INSTALL_CMAKEDIR ${DEF_INSTALL_CMAKEDIR} CACHE PATH "Installation directory for CMake files")
+install(TARGETS 
+            message
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
 
-# Report to user
-foreach(p LIB BIN INCLUDE CMAKE)
-  file(TO_NATIVE_PATH ${CMAKE_INSTALL_PREFIX}/${INSTALL_${p}DIR} _path )
-  message(STATUS "Installing ${p} components to ${_path}")
-  unset(_path)
-endforeach()
-
-add_subdirectory(src)
+install(TARGETS 
+            hello-world
+        DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
