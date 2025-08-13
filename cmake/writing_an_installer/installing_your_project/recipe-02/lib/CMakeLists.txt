@@ -1,0 +1,28 @@
+cmake_minimum_required( VERSION 3.15 )
+
+project(message-lib LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+message( STATUS "CMAKE_PROJECT_NAME = ${CMAKE_PROJECT_NAME}" )
+message( STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}" )
+
+add_library(message 
+    SHARED 
+    Message.hpp 
+    Message.cpp
+    )
+target_include_directories(message PUBLIC .)
+
+install(FILES
+            Message.hpp
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/message
+)
+
+install(TARGETS 
+            message
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
