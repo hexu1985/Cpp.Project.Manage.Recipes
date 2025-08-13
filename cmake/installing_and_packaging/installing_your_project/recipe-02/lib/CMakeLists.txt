@@ -16,13 +16,11 @@ add_library(message
     )
 target_include_directories(message PUBLIC .)
 
-install(FILES
-            Message.hpp
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/message
+install(FILES Message.hpp
+    DESTINATION include/message
 )
 
-install(TARGETS 
-            message
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+install(TARGETS message
+    DESTINATION lib
 )
 

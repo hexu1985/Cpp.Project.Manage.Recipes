@@ -6,4 +6,4 @@
 
 ### [构建时的操作](build_time_operations)
 
-### [编写安装程序](writing_an_installer)
+### [安装与打包](installing_and_packaging)

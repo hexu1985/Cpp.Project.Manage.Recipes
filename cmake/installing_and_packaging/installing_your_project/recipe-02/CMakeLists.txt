@@ -16,7 +16,6 @@ add_subdirectory(lib)
 add_executable(hello-world hello-world.cpp)
 target_link_libraries(hello-world message)
 
-install(TARGETS 
-            hello-world
-        DESTINATION ${CMAKE_INSTALL_BINDIR}
+install(TARGETS hello-world 
+    DESTINATION bin
 )

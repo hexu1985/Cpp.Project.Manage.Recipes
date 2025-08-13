@@ -20,17 +20,14 @@ target_link_libraries(hello-world message)
 
 include(GNUInstallDirs)
 
-install(FILES
-            Message.hpp
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/message
+install(FILES Message.hpp
+    DESTINATION include/message
 )
 
-install(TARGETS 
-            message
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}
+install(TARGETS message
+    DESTINATION lib
 )
 
-install(TARGETS 
-            hello-world
-        DESTINATION ${CMAKE_INSTALL_BINDIR}
+install(TARGETS hello-world
+    DESTINATION bin
 )
