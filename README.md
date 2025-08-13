@@ -9,4 +9,5 @@
 - [构建可执行程序](cmake/add_executable)
 - [构建库](cmake/add_library)
 - [构建时的操作](cmake/build_time_operations)
+- [编写安装程序](cmake/writing_an_installer)
 
